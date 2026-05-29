@@ -12,7 +12,18 @@ class AiEngine @Inject constructor() {
 
     suspend fun generateFollowUpMessage(lead: LeadEntity, context: String = ""): String {
         return withContext(Dispatchers.IO) {
-            val prompt = buildFollowUpPrompt(lead, context)
+            val prompt = """
+                Generate a personalized follow-up message for a tea/coffee business lead:
+                Customer Name: ${lead.name}
+                Company: ${lead.company}
+                Phone: ${lead.phone}
+                Product Requirement: ${lead.productRequirement}
+                Order Details: ${lead.orderDetails}
+                Inquiry Details: ${lead.inquiryDetails}
+                ${if (context.isNotBlank()) "Additional Context: $context" else ""}
+                Previous Follow-ups: ${lead.followUpCount}
+                Write a professional, warm follow-up message. Keep it under 200 words.
+            """.trimIndent()
             callAiApi(prompt)
         }
     }
@@ -23,7 +34,13 @@ class AiEngine @Inject constructor() {
         campaignGoal: String
     ): String {
         return withContext(Dispatchers.IO) {
-            val prompt = buildBulkMessagePrompt(leads, category, campaignGoal)
+            val prompt = """
+                Create a bulk WhatsApp message for $category category in the tea/coffee industry.
+                Campaign Goal: $campaignGoal
+                Target Leads: ${leads.size}
+                Include: product highlights, call-to-action, and contact info.
+                Keep it professional and under 300 words.
+            """.trimIndent()
             callAiApi(prompt)
         }
     }

@@ -98,7 +98,7 @@ fun LeadDetailScreen(
                         }
 
                         Spacer(modifier = Modifier.height(12.dp))
-                        HorizontalDivider()
+                        Divider()
                         Spacer(modifier = Modifier.height(12.dp))
 
                         if (lead.company.isNotBlank()) {

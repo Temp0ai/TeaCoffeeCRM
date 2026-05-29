@@ -5,6 +5,7 @@ import com.teacoffee.crm.data.local.entity.CategoryEntity
 import com.teacoffee.crm.data.local.entity.ContentTemplateEntity
 import com.teacoffee.crm.data.local.entity.ProductEntity
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 
 class SeedData {
@@ -13,8 +14,8 @@ class SeedData {
         suspend fun seedIfEmpty(database: AppDatabase) {
             withContext(Dispatchers.IO) {
                 val categoryDao = database.categoryDao()
-                val categories = categoryDao.getAllCategories()
-                if (categories.value.isNullOrEmpty()) {
+                val categories = categoryDao.getAllCategories().first()
+                if (categories.isEmpty()) {
                     seedCategories(database)
                     seedProducts(database)
                     seedTemplates(database)

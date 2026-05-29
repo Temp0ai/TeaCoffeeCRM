@@ -169,11 +169,12 @@ fun ComposeTab(
 
             if (state.sendProgress != null) {
                 Spacer(modifier = Modifier.height(8.dp))
+                val sendProgress = state.sendProgress!!
                 LinearProgressIndicator(
-                    progress = { state.sendProgress.first.toFloat() / state.sendProgress.second.toFloat() },
+                    progress = sendProgress.first.toFloat() / sendProgress.second.toFloat(),
                     modifier = Modifier.fillMaxWidth()
                 )
-                Text("Sending ${state.sendProgress.first}/${state.sendProgress.second}", style = MaterialTheme.typography.bodySmall)
+                Text("Sending ${sendProgress.first}/${sendProgress.second}", style = MaterialTheme.typography.bodySmall)
             }
 
             Spacer(modifier = Modifier.height(16.dp))
