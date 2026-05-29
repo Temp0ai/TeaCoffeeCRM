@@ -7,6 +7,8 @@ import androidx.work.*
 import com.teacoffee.crm.data.local.AppDatabase
 import com.teacoffee.crm.data.local.entity.LeadEntity
 import com.teacoffee.crm.data.remote.api.GmailApiService
+import com.teacoffee.crm.data.remote.api.WhatsAppApiService
+import com.teacoffee.crm.data.remote.api.GmbApiService
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.Dispatchers
