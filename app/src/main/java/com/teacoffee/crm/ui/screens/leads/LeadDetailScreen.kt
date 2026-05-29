@@ -190,7 +190,7 @@ fun LeadDetailScreen(
                             )
                         }
                         if (index < pipelineSteps.lastIndex) {
-                            HorizontalDivider(
+                            Divider(
                                 modifier = Modifier.width(8.dp).align(Alignment.CenterVertically),
                                 color = if (isActive) StatusConverted else MaterialTheme.colorScheme.outline.copy(alpha = 0.3f)
                             )

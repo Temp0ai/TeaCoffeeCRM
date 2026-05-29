@@ -21,7 +21,6 @@ class AiEngine @Inject constructor() {
                 Order Details: ${lead.orderDetails}
                 Inquiry Details: ${lead.inquiryDetails}
                 ${if (context.isNotBlank()) "Additional Context: $context" else ""}
-                Previous Follow-ups: ${lead.followUpCount}
                 Write a professional, warm follow-up message. Keep it under 200 words.
             """.trimIndent()
             callAiApi(prompt)
