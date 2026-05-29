@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TeaCoffee CRM</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="leads">Leads</string>
+    <string name="messaging">Messaging</string>
+    <string name="catalog">Catalog</string>
+    <string name="seo_tools">SEO Tools</string>
+    <string name="settings">Settings</string>
+    <string name="import_excel">Import Excel</string>
+    <string name="sync_gmail">Sync Gmail</string>
+    <string name="send_bulk_whatsapp">Send Bulk WhatsApp</string>
+    <string name="ai_follow_up">AI Follow-Up</string>
+    <string name="lead_categorization">Lead Categorization</string>
+    <string name="competitor_analysis">Competitor Analysis</string>
+    <string name="keyword_research">Keyword Research</string>
+    <string name="gmb_integration">Google My Business</string>
+    <string name="content_generator">Content Generator</string>
+</resources>
