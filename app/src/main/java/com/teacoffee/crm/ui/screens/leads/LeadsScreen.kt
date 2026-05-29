@@ -159,11 +159,6 @@ fun LeadCard(
     viewModel: LeadsViewModel,
     onClick: () -> Unit = {}
 ) {
-    Card(
-        onClick = onClick,
-        modifier = Modifier.fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
-    ) {
     val statusColor = when (lead.status) {
         "NEW" -> com.teacoffee.crm.ui.theme.StatusNew
         "CONTACTED" -> com.teacoffee.crm.ui.theme.StatusContacted
@@ -174,6 +169,7 @@ fun LeadCard(
     }
 
     Card(
+        onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
