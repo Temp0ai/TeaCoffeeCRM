@@ -153,6 +153,7 @@ fun LeadsScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LeadCard(
     lead: com.teacoffee.crm.data.local.entity.LeadEntity,

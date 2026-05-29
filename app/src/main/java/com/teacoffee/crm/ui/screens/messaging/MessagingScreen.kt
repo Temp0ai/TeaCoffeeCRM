@@ -83,6 +83,7 @@ fun WhatsAppWebView(modifier: Modifier = Modifier) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ComposeTab(
     viewModel: MessagingViewModel,
@@ -211,6 +212,7 @@ fun ComposeTab(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TemplatesTab(
     viewModel: MessagingViewModel,
