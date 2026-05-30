@@ -1,6 +1,7 @@
 package com.teacoffee.crm
 
 import android.app.Application
+import android.util.Log
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import com.teacoffee.crm.data.local.AppDatabase
@@ -22,8 +23,16 @@ class TeaCoffeeCRMApp : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
-        appScope.launch {
-            DatabaseInitializer.initialize(this@TeaCoffeeCRMApp, AppDatabase.getDatabase(this@TeaCoffeeCRMApp))
+        try {
+            appScope.launch {
+                try {
+                    DatabaseInitializer.initialize(this@TeaCoffeeCRMApp, AppDatabase.getDatabase(this@TeaCoffeeCRMApp))
+                } catch (e: Exception) {
+                    Log.e("TeaCoffeeCRM", "Database init failed: ${e.message}", e)
+                }
+            }
+        } catch (e: Exception) {
+            Log.e("TeaCoffeeCRM", "Application.onCreate failed: ${e.message}", e)
         }
     }
 
