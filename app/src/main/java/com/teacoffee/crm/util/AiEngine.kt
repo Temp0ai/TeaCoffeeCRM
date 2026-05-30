@@ -1,5 +1,6 @@
 package com.teacoffee.crm.util
 
+import com.teacoffee.crm.BuildConfig
 import com.teacoffee.crm.data.local.entity.LeadEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -207,7 +208,7 @@ class AiEngine @Inject constructor() {
     }
 
     private fun getApiKey(): String {
-        return System.getenv("OPENAI_API_KEY") ?: ""
+        return BuildConfig.OPENAI_API_KEY
     }
 
     data class ExtractedLeadData(

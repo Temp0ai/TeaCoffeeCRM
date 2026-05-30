@@ -27,7 +27,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug -POPENAI_API_KEY="${{ secrets.OPENAI_API_KEY }}"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
