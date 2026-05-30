@@ -52,7 +52,7 @@ fun SeoScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun KeywordsTab(
-    viewModel: SeoViewModel,
+    viewModel: SeoScreenViewModel,
     state: SeoState
 ) {
     var searchText by remember { mutableStateOf("") }
